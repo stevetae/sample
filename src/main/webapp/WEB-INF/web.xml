@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                             http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+	<!-- This is only here because Maven requires it to make a war. -->
+	<distributable/>
+	
+	<!--
+	<listener>
+          <listener-class>org.apache.ignite.startup.servlet.ServletContextListenerStartup</listener-class>
+        </listener>
+	
+	
+	<context-param>
+          <param-name>IgniteConfigurationFilePath</param-name>
+          <param-value>conf/default-config.xml</param-value>
+        </context-param>
+	
+	<context-param>
+		<param-name>IgniteWebSessionsGridName</param-name>
+		<param-value>myGridName</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>IgniteWebSessionsCacheName</param-name>
+		<param-value>webSessionCache</param-value>
+	</context-param>
+	
+	<filter>
+		<filter-name>IgniteWebSessionsFilter</filter-name>
+		<filter-class>org.apache.ignite.cache.websession.WebSessionFilter</filter-class>
+		<init-param>
+                  <param-name>IgniteWebSessionsKeepBinary</param-name>
+                  <param-value>true</param-value>
+                </init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>IgniteWebSessionsFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	-->
+	
+	
+<!-- hazelcast 
+	<filter>
+   <filter-name>hazelcast-filter</filter-name>
+   <filter-class>com.hazelcast.web.WebFilter</filter-class>
+
+   <init-param>
+       <param-name>map-name</param-name>
+       <param-value>my-sessions</param-value>
+   </init-param>
+   <init-param>
+       <param-name>sticky-session</param-name>
+       <param-value>true</param-value>
+   </init-param>
+   <init-param>
+       <param-name>debug</param-name>
+       <param-value>true</param-value>
+   </init-param>
+</filter>
+<filter-mapping>
+   <filter-name>hazelcast-filter</filter-name>
+   <url-pattern>/*</url-pattern>
+   <dispatcher>FORWARD</dispatcher>
+   <dispatcher>INCLUDE</dispatcher>
+   <dispatcher>REQUEST</dispatcher>
+</filter-mapping>
+<listener>
+   <listener-class>com.hazelcast.web.SessionListener</listener-class>
+</listener>
+
+-->
+	
+	<session-config>
+            <session-timeout>5</session-timeout>
+        </session-config>
+</web-app>
